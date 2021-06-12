@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../slices/basketSlice";
 import { addProduct } from "../slices/productSlice";
+import SelectedProduct from "./SelectedProduct";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -50,6 +51,15 @@ function Product({ id, title, price, description, category, image }) {
         dispatch(addProduct(product))
     };
 
+    <SelectedProduct 
+        key={id}
+        title={title}
+        price={price}
+        description={description}
+        category={category}
+        image={image}
+    />
+
     return (
         <div className="relative flex flex-col m-5 bg-white z-30 p-10"
             // onClick={displayProduct}
@@ -83,7 +93,7 @@ function Product({ id, title, price, description, category, image }) {
              <button className="mt-auto button" 
                 onClick={addItemToBasket}
              >
-                 View Product
+                 Add to basket
              </button>
         </div>
     );

@@ -4,12 +4,13 @@ import { selectProduct } from "../slices/productSlice";
 import SelectedProduct from "../components/SelectedProduct";
 
 function Item() {
-    const items = useSelector(selectProduct);
+    // const items = useSelector(selectProduct);
 
     return (
         <div>
             <Header />
-                {items.map((item, i) => (
+            <SelectedProduct />
+                {/* {items.map((item, i) => (
                   console.log(item.title),
                   <SelectedProduct 
                     key={i}
@@ -21,7 +22,7 @@ function Item() {
                     image = {item.image}
                     //  
                   />
-                ))}
+                ))} */}
         </div>
     )
 }
